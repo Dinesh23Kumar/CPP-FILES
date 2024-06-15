@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int pff(vector<int> v, int n) {
+    int ind = 0, maxx = INT_MIN, minn = V[0];
+    
+      for (int i = 0; i < n; i++) {
+        if (v[i] < minn) {
+            minn = v[i];
+            ind = i;
+        }
+    }
+    
+ 
+    for (int j = ind; j < n; j++) {
+        if (v[j] > maxx) {
+            maxx = v[j];
+        }
+    }
+    
+    return maxx - minn;
+}
+
+int main() {
+    vector<int> v;
+    int n, num;
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cin >> num;
+        v.emplace_back(num);
+    }
+    int profit = pff(v, n);
+    cout << profit;
+}
