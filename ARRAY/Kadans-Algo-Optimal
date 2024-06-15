@@ -1,0 +1,38 @@
+//maximum subarray sum
+#include <bits/stdc++.h>
+using namespace std;
+long long ka(vector<int>v,int n)
+{
+    long long sum=0;
+    long long maxi= INT_MIN;
+    int i;
+    for(i=0;i<n;i++)
+    {
+            sum += v[i];
+            
+            if( sum > maxi)
+            {
+                maxi = sum;
+            }
+        
+        if(sum < 0)
+        {
+            sum = 0;
+        }
+    }
+    return maxi;
+}
+int main()
+{
+  vector<int>v;
+  int n,num,i;
+  cin>>n;
+  for(i=0;i<n;i++)
+  {
+      cin>>num;
+      v.emplace_back(num);
+  }
+  long long maxx=ka(v,n);
+  cout<<maxx;
+    return 0;
+}
