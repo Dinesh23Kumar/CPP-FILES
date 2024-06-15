@@ -1,0 +1,28 @@
+//BUY AND SELL OPTIMAL
+#include <bits/stdc++.h>
+using namespace std;
+int pro(vector<int>v,int n)
+{
+    int minn = INT_MAX,maxi= 0;
+    for(int i=0;i<n;i++)
+    {
+        minn=min(v[i],minn);
+        maxi=max(maxi,v[i] - minn);
+    }
+    return maxi;
+}
+int main()
+{
+    vector<int>v;
+    int i,n,num;
+    cin>>n;
+    for(i=0;i<n;i++)
+    {
+        cin>>num;
+        v.emplace_back(num);
+    }
+    int profit=pro(v,n);
+    cout<<profit;
+
+    return 0;
+}
