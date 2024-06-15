@@ -1,0 +1,37 @@
+include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n,i,small,ma=0;
+    cin>>n;
+    int min=n;
+    int a[n];
+    int has[20]={0};
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+        has[a[i]]++;
+    }
+    for(i=0;i<n;i++)
+    {
+        if(has[i]>ma)
+        {
+            ma=has[i];
+            int in=i;
+        if(has[i]>0 && has[i]<min)
+        {
+            min=has[i];
+        }
+        
+             
+        }
+        
+    
+    }
+    cout<<ma<<endl;
+    cout<<min;
+
+
+    return 0;
+}
