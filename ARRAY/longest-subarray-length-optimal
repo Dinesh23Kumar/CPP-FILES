@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+int lensubarr(vector<int>a,int n,long long k)
+{
+    long long sum=0;
+    int maxLen=0,j;
+    map<long long,int>mpp;
+    for(j=0;j<n;j++)
+    {
+        sum+=a[j];
+        
+        if(sum==k)
+        {
+            maxLen=max(maxLen,j+1);
+        }
+        long long rem=sum-k;
+        if(mpp.find(rem) != mpp.end())
+        {
+            int len= j- mpp[rem];
+            maxLen=max(maxLen,len);
+        }
+        if(mpp.find(sum) == mpp.end() )
+        {
+            mpp[sum]=j;
+        }
+    }
+    return maxLen;
+}
+int main()
+{
+    vector<int>a;
+    int n,i,num;
+    long long k;
+    cout<<"Enter the length:";
+    cin>>n;
+    cout<<"Enter the k value:";
+    cin>>k;
+    for(i=0;i<n;i++)
+    {
+        cin>>num;
+        a.emplace_back(num);
+    }
+    int lengtth=lensubarr(a,n,k);
+    cout<<"Longest length is:"<<lengtth<<endl;
+    return 0;
+}
