@@ -1,0 +1,69 @@
+//selection sort
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+
+    int i,n,j,mini,t;
+
+    cin>>n;
+
+    int a[n];
+
+    for(i=0;i<n;i++)
+
+    {
+
+        cin>>a[i];
+
+    }
+
+    
+
+    for(i=0;i<=n-2;i++)
+
+    {
+
+        mini=i;
+
+        for(j=i;j<=n-1;j++)
+
+        {
+
+            if(a[j]<a[mini])
+
+            {
+
+                mini=j;
+
+                
+
+            }
+
+            
+
+            
+
+        }       
+
+               t=a[mini];
+
+               a[mini]=a[i];
+
+               a[i]=t;
+
+        
+
+    }
+
+      for(i=0;i<n;i++)
+
+       {
+
+        cout<<a[i]<<" ";
+
+       }
+
+    return 0;
+
+}
