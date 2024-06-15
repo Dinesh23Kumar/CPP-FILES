@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    vector <signed int> v={-1,2,3,-7,-9,8};
+    int n=v.size();
+    vector <signed int> temp(n);
+    int posptr=0;
+    int negptr=1;
+    for(int i=0;i<n;i++)
+    {
+        if(v[i]>=0)
+        {
+            temp[posptr]=v[i];
+            posptr+=2;
+        }
+        else
+        {
+            temp[negptr]=v[i];
+            negptr+=2;
+        }
+    }
+    for(int i=0;i<n;i++)
+    {
+        cout<<temp[i]<<" ";
+    }
+    return 0;
+    
+}
